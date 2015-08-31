@@ -1,12 +1,13 @@
-easySB
+easySB (0.0.1)
 ===================
 easySB is a simple website template built using PHP ([Slim framework](http://www.slimframework.com/) and [Twig](http://twig.sensiolabs.org/) for the page templates).
 
-----------
+##Installation
+Project is currently not ready for production
+
 ##SQL Data Dump
 The provided sql file is just a table dump. It includes only the required settings for the website to run for first launch. Once the site is up and running, you must edit the settings using any mysql database editor of your choice (for settings that can't be changed on the website itself).
 
-----------
 ##Creating a page
 Making a new web-page is fairly simple. There are only a few steps to follow.
 
@@ -32,7 +33,6 @@ Making a new web-page is fairly simple. There are only a few steps to follow.
 **Code Block 3**
 `require INC_ROOT.'/app/routes/<## remainder of the path to the route file ##>';`
 
-----------
 ##Removing a page
 
 1. Delete the route file under 'app/routes'
