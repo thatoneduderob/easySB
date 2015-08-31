@@ -2,24 +2,15 @@
   use Slim\Slim;
   use Slim\Views\Twig;
   use Slim\Views\TwigExtension;
-
   use Noodlehaus\Config;
-
   use RandomLib\Factory as RandomLib;
-
+  use thatoneduderob\Models\NavbarLinks;
+  use thatoneduderob\Models\WebSettings;
   use thatoneduderob\User\User;
-
-  use thatoneduderob\Models\Dropdown;
-  use thatoneduderob\Models\Option;
-  use thatoneduderob\Models\Message;
-
   use thatoneduderob\Helpers\Hash;
-
   use thatoneduderob\Validation\Validator;
-
   use thatoneduderob\Middleware\BeforeMiddleware;
   use thatoneduderob\Middleware\CsrfMiddleware;
-
   use thatoneduderob\Mail\Mailer;
 
   session_cache_limiter(false);
@@ -39,7 +30,6 @@
 
   $app->add(new BeforeMiddleware);
   $app->add(new CsrfMiddleware);
-
   $app->configureMode($app->config('mode'), function() use ($app) {
     $app->config = Config::load(INC_ROOT."/app/config/config.php");
   });
@@ -49,31 +39,21 @@
   require 'routes.php';
 
   $app->auth = false;
-
   $app->container->set('user', function() {
     return new User;
   });
-
-  $app->container->set('dropdown', function() {
-    return new Dropdown;
+  $app->container->set('websettings', function() {
+    return new WebSettings;
   });
-
-  $app->container->set('option', function() {
-    return new Option;
+  $app->container->set('navlinks', function() {
+    return new NavbarLinks;
   });
-
-  $app->container->set('message', function() {
-    return new Message;
-  });
-
   $app->container->singleton('hash', function() use ($app) {
     return new Hash($app->config);
   });
-
   $app->container->singleton('validation', function() use ($app) {
     return new Validator($app->user, $app->hash, $app->auth);
   });
-
   $app->container->singleton('mail', function() use ($app) {
     $mailer = new PHPMailer;
 
@@ -91,7 +71,6 @@
 
     return new Mailer($mailer, $app->view);
   });
-
   $app->container->singleton('randomlib', function() use ($app) {
     $factory = new RandomLib;
     return $factory->getMediumStrengthGenerator();

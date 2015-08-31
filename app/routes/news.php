@@ -1,7 +1,7 @@
 <?php
-  $app->get('/', function() use ($app) {
-    $app->render('home.php', [
+  $app->get('/news', function() use ($app) {
+    $app->render('news.php', [
       'links' => $app->navlinks->getLinks(),
       'totalUsers' => $app->user->getTotalUsers()
     ]);
-  })->name('home');
+  })->name('news');

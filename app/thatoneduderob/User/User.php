@@ -79,4 +79,8 @@
     public function getUsername($userId) {
       return $this->where('id', $userId)->first()->username;
     }
+
+    public function getTotalUsers() {
+      return $this->get()->count();
+    }
   }

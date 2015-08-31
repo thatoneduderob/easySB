@@ -1,7 +1,7 @@
 {% extends 'templates/default.php' %}
 
-{% set title = 'Home' %}
+{% set title = 'Forums' %}
 
 {% block content %}
-Home
+Forums
 {% endblock %}

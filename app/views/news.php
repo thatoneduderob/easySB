@@ -1,7 +1,7 @@
 {% extends 'templates/default.php' %}
 
-{% set title = 'Home' %}
+{% set title = 'News' %}
 
 {% block content %}
-Home
+News
 {% endblock %}

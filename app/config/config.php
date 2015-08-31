@@ -10,7 +10,7 @@
     'db' => [
       'driver' => 'mysql',
       'host' => '127.0.0.1',
-      'name' => 'karkic',
+      'name' => 'easysb',
       'username' => 'root',
       'password' => '',
       'charset' => 'utf8',

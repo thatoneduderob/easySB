@@ -1,7 +1,7 @@
 <?php
-  $app->get('/', function() use ($app) {
-    $app->render('home.php', [
+  $app->get('/chat', function() use ($app) {
+    $app->render('chat.php', [
       'links' => $app->navlinks->getLinks(),
       'totalUsers' => $app->user->getTotalUsers()
     ]);
-  })->name('home');
+  })->name('chat');
