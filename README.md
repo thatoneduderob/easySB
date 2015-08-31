@@ -2,6 +2,9 @@ easySB (0.0.1)
 ===================
 easySB is a simple website template built using PHP ([Slim framework](http://www.slimframework.com/) and [Twig](http://twig.sensiolabs.org/) for the page templates).
 
+Project Start Date: August 30th, 2015
+Project End Date: ----
+
 ##Installation
 Project is currently not ready for production
 
