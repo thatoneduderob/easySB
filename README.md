@@ -3,6 +3,7 @@ easySB (0.0.1)
 easySB is a simple website template built using PHP ([Slim framework](http://www.slimframework.com/) and [Twig](http://twig.sensiolabs.org/) for the page templates).
 
 Project Start Date: August 30th, 2015
+
 Project End Date: ----
 
 ##Installation
@@ -21,12 +22,14 @@ Making a new web-page is fairly simple. There are only a few steps to follow.
 ####PLEASE NOTE THAT YOU MAY VIEW EITHER OF THE FILES IN THIS PROJECT TO USE AS AN EXAMPLE
 
 **Code Block 1**
+
 `<?php
   $app->get('/<## address bar path to page ##>', function() use ($app) {
     $app->render('<## path to views files starting from the root of app/views ##>');
   })->name('<## name of route - can be anything but must be unique ##>');`
   
 **Code Block 2**
+
 `{% extends 'templates/default.php' %}
 {% set title = '<## name of the page - can be anything ##>' %}
 {% block content %}
@@ -34,6 +37,7 @@ Making a new web-page is fairly simple. There are only a few steps to follow.
 {% endblock %}`
 
 **Code Block 3**
+
 `require INC_ROOT.'/app/routes/<## remainder of the path to the route file ##>';`
 
 ##Removing a page
