@@ -4,7 +4,9 @@
   $app->get('/login', $guest(), function() use ($app) {
     $app->render('auth/login.php', [
       'links' => $app->navlinks->getLinks(),
-      'totalUsers' => $app->user->getTotalUsers()
+      'totalUsers' => $app->user->getTotalUsers(),
+      'totalNewsPosts' => $app->news->getTotalPosts(),
+      'webSiteName' => $app->websettings->getSiteName()
     ]);
   })->name('login');
 

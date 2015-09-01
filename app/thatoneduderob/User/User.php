@@ -83,4 +83,8 @@
     public function getTotalUsers() {
       return $this->get()->count();
     }
+
+    public function getDateFromStamp($timestamp) {
+      return date("M d, Y", strtotime($timestamp));
+    }
   }

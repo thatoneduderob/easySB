@@ -3,5 +3,11 @@
 {% set title = 'Members' %}
 
 {% block content %}
-Members
+  <h3>Members</h3>
+  <table>
+    <tr>
+      <td>Name</td>
+      <td>Join date</td>
+    </tr>
+    {{pagination|raw}}
 {% endblock %}

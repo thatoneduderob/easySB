@@ -10,6 +10,6 @@
     ];
 
     public function getSiteName() {
-      return $this->site_name;
+      return $this->where('id', 1)->first()->site_name;
     }
   }

@@ -2,7 +2,9 @@
   $app->get('/change-password', $authenticated(), function() use ($app) {
     $app->render('auth/password/change.php', [
       'links' => $app->navlinks->getLinks(),
-      'totalUsers' => $app->user->getTotalUsers()
+      'totalUsers' => $app->user->getTotalUsers(),
+      'totalNewsPosts' => $app->news->getTotalPosts(),
+      'webSiteName' => $app->websettings->getSiteName()
     ]);
   })->name('auth.password.change');
 

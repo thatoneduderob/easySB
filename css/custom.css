@@ -1,37 +1,54 @@
 body {
-  display: flex !important;
-  min-height: 100vh !important;
-  flex-direction: column !important;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 main {
-  flex: 1 0 auto !important;
-  margin-top: 1em !important;
+  flex: 1 0 auto;
+  margin-top: 1em;
 }
 nav {
   background-color: #1976d2 !important;
-  width: 100% !important;
+  width: 100%;
 }
 nav ul {
-  display: flex !important;
-  flex-direction: 0 !important;
+  display: flex;
+  flex-direction: 0;
 }
 nav ul li {
-  flex-grow: 1 !important;
-  text-align: center !important;
+  flex-grow: 1;
+  text-align: center;
 }
 nav ul li a {
-  display: block !important;
+  display: block;
 }
 div.row {
-  text-align: center !important;
+  text-align: center;
 }
 span.card-title {
-  border-bottom: 1px solid #263238 !important;
+  border-bottom: 1px solid #263238;
 }
 footer.page-footer {
-  padding-top: 0 !important;
-  text-align: center !important;
+  padding-top: 0;
+  text-align: center;
 }
-div.card-content a {
+div.card-content a, footer a {
   color: #000 !important;
+}
+footer a {
+  font-weight: bold;
+}
+table {
+  table-layout: fixed;
+}
+table tr td {
+  text-align: center;
+  padding: 5px;
+}
+.pagination {
+  display: table;
+  margin: 0 auto;
+}
+.pagination li.active {
+  background-color: #2196f3 !important;
 }

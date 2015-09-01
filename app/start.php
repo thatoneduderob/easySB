@@ -6,6 +6,8 @@
   use RandomLib\Factory as RandomLib;
   use thatoneduderob\Models\NavbarLinks;
   use thatoneduderob\Models\WebSettings;
+  use thatoneduderob\Models\News;
+  use thatoneduderob\Classes\Pagination;
   use thatoneduderob\User\User;
   use thatoneduderob\Helpers\Hash;
   use thatoneduderob\Validation\Validator;
@@ -47,6 +49,12 @@
   });
   $app->container->set('navlinks', function() {
     return new NavbarLinks;
+  });
+  $app->container->set('news', function() {
+    return new News;
+  });
+  $app->container->set('pagination', function() {
+    return new Pagination;
   });
   $app->container->singleton('hash', function() use ($app) {
     return new Hash($app->config);
