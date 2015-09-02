@@ -25,6 +25,14 @@
       {% if errors.has('password_confirm') %}{{ errors.first('password_confirm') }}{% endif %}
     </div>
     <div>
+      <label for="timezone">Timezone</label>
+      <select class="browser-default" name="timezone" id="timezone">
+        {% for tz in timezones %}
+          <option value="{{tz}}">{{tz}}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div>
       <button class="btn waves-effect waves-light" type="submit">Register</button>
     </div>
     <input type="hidden" name="{{ csrf_key }}" value="{{ csrf_token }}">

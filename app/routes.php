@@ -1,7 +1,6 @@
 <?php
   require INC_ROOT.'/app/routes/home.php';
   require INC_ROOT.'/app/routes/forums.php';
-  require INC_ROOT.'/app/routes/news.php';
   require INC_ROOT.'/app/routes/members.php';
   require INC_ROOT.'/app/routes/chat.php';
 

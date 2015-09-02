@@ -3,11 +3,12 @@
 {% set title = 'Members' %}
 
 {% block content %}
-  <h3>Members</h3>
-  <table>
-    <tr>
-      <td>Name</td>
-      <td>Join date</td>
-    </tr>
-    {{pagination|raw}}
+<div class="col s12">
+  <div class="card blue">
+    <div class="card-content white-text">
+      <h3>Members</h3>
+      {{pagination|raw}}
+    </div>
+  </div>
+</div>
 {% endblock %}

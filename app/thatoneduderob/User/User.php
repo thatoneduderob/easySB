@@ -16,9 +16,7 @@
       'recover_hash',
       'first_name',
       'last_name',
-      'location',
-      'school',
-      'prof_hash'
+      'timezone'
     ];
 
     public function getFullName() {
@@ -73,7 +71,7 @@
     }
 
     public function permissions() {
-      return $this->hasOne('HardcoreWars\User\UserPermission', 'user_id');
+      return $this->hasOne('thatoneduderob\User\UserPermission', 'user_id');
     }
 
     public function getUsername($userId) {
@@ -81,10 +79,6 @@
     }
 
     public function getTotalUsers() {
-      return $this->get()->count();
-    }
-
-    public function getDateFromStamp($timestamp) {
-      return date("M d, Y", strtotime($timestamp));
+      return $this->where('active', true)->get()->count();
     }
   }

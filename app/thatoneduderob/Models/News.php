@@ -9,7 +9,8 @@
       'title',
       'body',
       'poster',
-      'tag'
+      'tag',
+      'public'
     ];
 
     public function getPost($postId) {

@@ -5,7 +5,7 @@
 {% endset %}
 
 {% block content %}
-  <h2>{{ user.username }}</h2>
+  <h2>[{{user.rank}}] {{user.username}}</h2>
   <img src="{{ user.getAvatarUrl({size: 90}) }}" height="90" width="90" alt="Profile picture for {{ user.getFullNameOrUsername }}">
   <dl>
     {% if user.getFullName %}

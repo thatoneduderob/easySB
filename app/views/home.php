@@ -3,5 +3,12 @@
 {% set title = 'Home' %}
 
 {% block content %}
-Home
+<div class="col s12">
+  <div class="card blue">
+    <div class="card-content white-text">
+      <h3>News</h3>
+      {{pagination|raw}}
+    </div>
+  </div>
+</div>
 {% endblock %}

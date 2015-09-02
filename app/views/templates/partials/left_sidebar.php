@@ -4,7 +4,7 @@
       <span class="card-title">Web stats</span>
       <table>
         <tr>
-          <td>Total users</td>
+          <td>Total active users</td>
           <td>{{totalUsers}}</td>
         </tr>
         <tr>
@@ -27,11 +27,7 @@
           <td>## NULL ##</td>
         </tr>
         <tr>
-          <td>Total likes</td>
-          <td>## NULL ##</td>
-        </tr>
-        <tr>
-          <td>Total dislikes</td>
+          <td>Top poster</td>
           <td>## NULL ##</td>
         </tr>
       </table>

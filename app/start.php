@@ -7,7 +7,10 @@
   use thatoneduderob\Models\NavbarLinks;
   use thatoneduderob\Models\WebSettings;
   use thatoneduderob\Models\News;
+  use thatoneduderob\Classes\General;
   use thatoneduderob\Classes\Pagination;
+  use thatoneduderob\Rank\Rank;
+  use thatoneduderob\Rank\RankPermission;
   use thatoneduderob\User\User;
   use thatoneduderob\Helpers\Hash;
   use thatoneduderob\Validation\Validator;
@@ -47,6 +50,9 @@
   $app->container->set('websettings', function() {
     return new WebSettings;
   });
+
+  ini_set('date.timezone', $app->websettings->getTimezone());
+
   $app->container->set('navlinks', function() {
     return new NavbarLinks;
   });
@@ -55,6 +61,12 @@
   });
   $app->container->set('pagination', function() {
     return new Pagination;
+  });
+  $app->container->set('general', function() {
+    return new General;
+  });
+  $app->container->set('rank', function() {
+    return new Rank;
   });
   $app->container->singleton('hash', function() use ($app) {
     return new Hash($app->config);

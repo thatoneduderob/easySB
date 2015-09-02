@@ -32,7 +32,7 @@ footer.page-footer {
   padding-top: 0;
   text-align: center;
 }
-div.card-content a, footer a {
+div.col.s3 div.card-content a, footer a {
   color: #000 !important;
 }
 footer a {
@@ -50,5 +50,30 @@ table tr td {
   margin: 0 auto;
 }
 .pagination li.active {
-  background-color: #2196f3 !important;
+  background-color: #1976d2 !important;
+}
+div.col.s3 div.card-content a.white-text {
+  color: #fff !important;
+}
+div.col.s9 div.card-content table tr td a {
+  color: #000;
+}
+.btn {
+  background-color: #1e88e5;
+}
+.btn:hover {
+  background-color: #1976d2;
+}
+li.collection-item {
+  color: #000 !important;
+  padding-left: 10px 20px;
+  text-align: left;
+}
+@media only screen and (max-width: 1024px) {
+    #sb_wd {
+        display: none;
+    }
+    .col.s9 {
+      width: 100% !important;
+    }
 }

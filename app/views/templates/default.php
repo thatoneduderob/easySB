@@ -17,8 +17,7 @@
     </header>
     <main>
       <div class="row">
-        {% include 'templates/partials/left_sidebar.php' %}
-        <div class="col s8">
+        <div class="col s9">
           {% include 'templates/partials/messages.php' %}
           {% block content %}{% endblock %}
         </div>
@@ -30,5 +29,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
+    <script>
+    $(document).ready(function() {
+      $('select').material_select();
+    });
+    </script>
   </body>
 </html>

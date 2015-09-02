@@ -1,12 +1,13 @@
 <?php
-  use HardcoreWars\User\UserPermission;
+  use thatoneduderob\User\UserPermission;
 
   $app->get('/register', $guest(), function() use ($app) {
     $app->render('auth/register.php', [
       'links' => $app->navlinks->getLinks(),
       'totalUsers' => $app->user->getTotalUsers(),
       'totalNewsPosts' => $app->news->getTotalPosts(),
-      'webSiteName' => $app->websettings->getSiteName()
+      'webSiteName' => $app->websettings->getSiteName(),
+      'timezones' => $app->general->getTimezones()
     ]);
   })->name('register');
 
@@ -17,13 +18,15 @@
     $username = $request->post('username');
     $password = $request->post('password');
     $password_confirm = $request->post('password_confirm');
+    $timezone = $request->post('timezone');
 
     $v = $app->validation;
     $v->validate([
       'email' => [$email, 'required|email|uniqueEmail'],
       'username' => [$username, 'required|alnumDash|max(30)|uniqueUsername'],
       'password' => [$password, 'required|min(6)'],
-      'password_confirm' => [$password_confirm, 'required|matches(password)']
+      'password_confirm' => [$password_confirm, 'required|matches(password)'],
+      'timezone' => [$timezone, 'required']
     ]);
 
     if($v->passes()) {
@@ -34,7 +37,9 @@
         'username' => $username,
         'password' => $app->hash->password($password),
         'active' => false,
-        'active_hash' => $app->hash->hash($identifier)
+        'active_hash' => $app->hash->hash($identifier),
+        'timezone' => $timezone,
+        'rank' => "Member"
       ]);
 
       $user->permissions()->create(UserPermission::$defaults);
