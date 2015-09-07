@@ -30,7 +30,7 @@
   $app = new Slim([
     'mode' => 'production',
     'view' => new Twig(),
-    'templates.path' => INC_ROOT.'/app/Views'
+    'templates.path' => INC_ROOT.'/app/views'
   ]);
 
   $app->add(new BeforeMiddleware);
